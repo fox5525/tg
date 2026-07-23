@@ -16,11 +16,11 @@ app.get('/', (req, res) => {
 });
 
 const authRoutes = require('./routes/authRoutes');
-const penguinRoutes = require('./routes/penguinRoutes');
+const bookRoutes = require('./routes/bookRoutes');
 
 // Routes
 app.use('/api/auth', authRoutes);
-app.use('/api/penguins', penguinRoutes);
+app.use('/api/books', bookRoutes);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

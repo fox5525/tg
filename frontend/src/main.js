@@ -1,9 +1,4 @@
+import './assets/main.css' // หรือ import './style.css' (ขึ้นอยู่กับโฟลเดอร์โครงการของคุณ)
 import { createApp } from 'vue'
-import './style.css'
 import App from './App.vue'
-import router from './router'
-
-const app = createApp(App)
-app.use(router)
-app.mount('#app')
-
+// ... โค้ดส่วนอื่น 

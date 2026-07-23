@@ -10,28 +10,15 @@ const createTables = async () => {
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
 
-    CREATE TABLE IF NOT EXISTS penguins (
+    CREATE TABLE IF NOT EXISTS books (
       id SERIAL PRIMARY KEY,
-      name VARCHAR(100),
-      gender VARCHAR(20) NOT NULL,
-      species VARCHAR(100) NOT NULL,
-      habitat_zone VARCHAR(100),
+      isbn VARCHAR(50) NOT NULL,
+      title VARCHAR(255) NOT NULL,
+      author VARCHAR(255) NOT NULL,
+      category VARCHAR(100) NOT NULL,
+      year INTEGER NOT NULL,
       status VARCHAR(50) NOT NULL,
-      image_url VARCHAR(255),
-      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-      updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    );
-
-    CREATE TABLE IF NOT EXISTS penguin_colors (
-      penguin_id INTEGER REFERENCES penguins(id) ON DELETE CASCADE,
-      color VARCHAR(50) NOT NULL,
-      PRIMARY KEY (penguin_id, color)
-    );
-
-    CREATE TABLE IF NOT EXISTS penguin_ages (
-      penguin_id INTEGER REFERENCES penguins(id) ON DELETE CASCADE,
-      age_group VARCHAR(50) NOT NULL,
-      PRIMARY KEY (penguin_id, age_group)
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
   `;
 
